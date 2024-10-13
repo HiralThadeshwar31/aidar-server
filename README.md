@@ -1,71 +1,73 @@
+
 # Aidar Server
 
-This is a Flask server for the Aidar project. Follow the steps below to set up the environment and run the server.
+## Running the Flask Server
 
-## Prerequisites
+To run the Flask server, follow these steps:
 
-- Python 3.7 or higher
-- pip (Python package installer)
-
-## Setting Up the Environment
-
-1. **Clone the repository:**
-
-   ```bash
-   git clone https://github.com/HiralThadeshwar31/aidar-server.git
-   ```
-
-2. **Navigate to the project directory:**
-
-   ```bash
-   cd aidar-server
-   ```
-
-3. **Create a virtual environment:**
-
-   You can create a virtual environment using `venv`:
-
+1. **Create a virtual environment** (optional but recommended):
    ```bash
    python -m venv venv
    ```
 
-4. **Activate the virtual environment:**
-
+2. **Activate the virtual environment**:
    - On Windows:
-
      ```bash
      venv\Scripts\activate
      ```
-
-   - On macOS/Linux:
-
+   - On Mac:
      ```bash
      source venv/bin/activate
      ```
 
-5. **Install the required packages:**
-
-   Make sure you have a `requirements.txt` file in your project. If you don't have one, create it and list all necessary packages. Then, run:
-
+3. **Install required packages**:
+   Make sure to have your `requirements.txt` file ready and install the necessary packages:
    ```bash
    pip install -r requirements.txt
    ```
 
-## Running the Flask Server
+4. **Run the Flask server**:
+   ```bash
+   python app.py
+   ```
 
-Once the environment is set up and the required packages are installed, you can run the Flask server by executing:
+## Installing Redis
 
-```bash
-python app.py
-```
+### Windows
 
-The server should start, and you can access it at `http://127.0.0.1:5000/` (or whatever host and port your Flask app is configured to use).
+1. **Download Redis**:
+   Visit the [Redis for Windows releases page](https://github.com/microsoftarchive/redis/releases) and download the latest `.msi` installer.
 
-## Stopping the Server
+2. **Install Redis**:
+   Run the downloaded installer and follow the setup instructions.
 
-To stop the server, you can use `CTRL + C` in the terminal where the server is running.
+3. **Start Redis server**:
+   Open a command prompt and run:
+   ```bash
+   redis-server
+   ```
 
-## Notes
+### Mac
 
-- Make sure to set any required environment variables before running the server, if applicable.
-- For detailed usage and endpoints, please refer to the API documentation or code comments.
+1. **Install Homebrew** (if not already installed):
+   Open a terminal and run:
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+
+2. **Install Redis**:
+   ```bash
+   brew install redis
+   ```
+
+3. **Start Redis server**:
+   ```bash
+   brew services start redis
+   ```
+
+4. **Verify Redis is running**:
+   You can check if Redis is working by running:
+   ```bash
+   redis-cli ping
+   ```
+   It should return "PONG".
