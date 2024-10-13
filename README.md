@@ -1,73 +1,72 @@
-
 # Aidar Server
 
-## Running the Flask Server
+This README provides instructions on how to set up and run the Flask server for the Aidar application.
 
-To run the Flask server, follow these steps:
+## Prerequisites
 
-1. **Create a virtual environment** (optional but recommended):
+Before you start, ensure you have Python installed on your machine.
+
+## Setting Up the Environment
+
+1. **Create a Virtual Environment** (optional but recommended):
    ```bash
    python -m venv venv
    ```
 
-2. **Activate the virtual environment**:
-   - On Windows:
+2. **Activate the Virtual Environment**:
+   - **Windows**:
      ```bash
      venv\Scripts\activate
      ```
-   - On Mac:
+   - **macOS/Linux**:
      ```bash
      source venv/bin/activate
      ```
 
-3. **Install required packages**:
-   Make sure to have your `requirements.txt` file ready and install the necessary packages:
+3. **Install Dependencies**:
+   Install the necessary packages:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Run the Flask server**:
-   ```bash
-   python app.py
-   ```
-
-## Installing Redis
+## Starting Redis
 
 ### Windows
 
-1. **Download Redis**:
-   Visit the [Redis for Windows releases page](https://github.com/microsoftarchive/redis/releases) and download the latest `.msi` installer.
+1. **Download Redis for Windows**:
+   - Go to the [Redis for Windows](https://github.com/microsoftarchive/redis/releases) releases page.
+   - Download the latest `.zip` file.
 
-2. **Install Redis**:
-   Run the downloaded installer and follow the setup instructions.
+2. **Extract and Navigate**:
+   - Extract the downloaded `.zip` file.
+   - Open a command prompt and navigate to the Redis folder.
 
-3. **Start Redis server**:
-   Open a command prompt and run:
+3. **Start Redis with `redis-cli`**:
    ```bash
-   redis-server
+   redis-cli
    ```
 
-### Mac
+### macOS
 
-1. **Install Homebrew** (if not already installed):
-   Open a terminal and run:
-   ```bash
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-   ```
-
-2. **Install Redis**:
+1. **Install Redis using Homebrew**:
    ```bash
    brew install redis
    ```
 
-3. **Start Redis server**:
+2. **Start Redis with `redis-cli`**:
    ```bash
-   brew services start redis
+   redis-cli
    ```
 
-4. **Verify Redis is running**:
-   You can check if Redis is working by running:
+## Running the Flask Server
+
+1. **Start Redis** (as described above).
+2. **Run the Flask server**:
    ```bash
-   redis-cli ping
+   python app.py
    ```
-   It should return "PONG".
+
+3. **Start the Client**:
+   - Ensure the client application is set up and running according to its instructions.
+
+Your server should now be running, and you can access it via your web browser or API client.
